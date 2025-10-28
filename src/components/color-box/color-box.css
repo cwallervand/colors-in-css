@@ -1,0 +1,17 @@
+:host {
+  --color-box-color: var(--kantega-red);
+  --color-box-size: var(--size-px-13);
+}
+
+.color-box {
+  display: inline-block;
+  justify-items: center;
+}
+
+.color-square {
+  width: var(--color-box-size);
+  height: var(--color-box-size);
+  display: block;
+  background-color: var(--color-box-color);
+  margin-block-end: var(--size-1);
+}

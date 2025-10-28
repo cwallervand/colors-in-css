@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { BasicColorPage } from '../pages/basic-color/basic-color';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: BasicColorPage,
+  },
+];
