@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './resources.html',
 })
-export class Resources {}
+export class ResourcesPage {}
