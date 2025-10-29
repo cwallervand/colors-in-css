@@ -3,6 +3,7 @@
 @import 'open-props/colors';
 @import 'open-props/sizes';
 @import 'open-props/shadows';
+@import 'open-props/fonts';
 
 :root {
   --kantega-red: #ee3a64;

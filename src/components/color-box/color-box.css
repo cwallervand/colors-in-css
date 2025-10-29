@@ -1,6 +1,6 @@
 :host {
   --color-box-color: var(--kantega-red);
-  --color-box-size: var(--size-px-13);
+  --color-box-size: calc(var(--size-px-9) * 5);
 }
 
 .color-box {
@@ -14,4 +14,9 @@
   display: block;
   background-color: var(--color-box-color);
   margin-block-end: var(--size-1);
+}
+
+.color-name {
+  font-size: var(--font-size-0);
+  font-style: italic;
 }
