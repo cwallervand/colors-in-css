@@ -1,5 +1,6 @@
 <nav>
-  <a routerLink="/1" routerLinkActive="active" class="nav-link">Basic Colors</a>
-  <a routerLink="/2" routerLinkActive="active" class="nav-link">Relative Colors</a>
-  <a routerLink="/resources" routerLinkActive="active" class="nav-link">Resources</a>
+  @if (backRoute()) {
+  <a [routerLink]="backRoute()" class="nav-link">← Back</a>
+  }
+  <a [routerLink]="forwardRoute()" class="nav-link">Forward →</a>
 </nav>
