@@ -1,6 +1,5 @@
 <nav>
-  @if (backRoute()) {
-  <a [routerLink]="backRoute()" class="nav-link">← Back</a>
-  }
-  <a [routerLink]="forwardRoute()" class="nav-link">Forward →</a>
+  <a [routerLink]="backRoute()" [class.disabled]="!backRoute()">← Back</a>
+  <a [routerLink]="forwardRoute()">Forward →</a>
+  <a routerLink="resources">Resources</a>
 </nav>

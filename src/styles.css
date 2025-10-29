@@ -1,7 +1,8 @@
-@layer base;
+@layer reset, base;
 
 @import 'open-props/colors';
 @import 'open-props/sizes';
+@import 'open-props/shadows';
 
 :root {
   --kantega-red: #ee3a64;
@@ -20,6 +21,14 @@
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol';
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 @layer base {

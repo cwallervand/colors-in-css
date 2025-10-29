@@ -1,0 +1,8 @@
+<header>
+  <nav-bar />
+</header>
+<main>
+  @if (currentPageComponent) {
+  <ng-container *ngComponentOutlet="currentPageComponent" />
+  }
+</main>

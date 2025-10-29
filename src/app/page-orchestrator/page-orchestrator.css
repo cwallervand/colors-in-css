@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: var(--size-5);
+  box-shadow: var(--shadow-2);
+  height: var(--size-9);
+}
