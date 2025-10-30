@@ -1,0 +1,31 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+  padding: var(--size-3);
+}
+
+div {
+  padding: var(--size-3);
+  color: var(--text-color);
+  background-color: color-mix(in srgb, currentColor 10%, white);
+  border: var(--border-size-2) solid;
+  border-radius: var(--radius-2);
+  box-shadow: 1px 3px 7px color-mix(in srgb, currentColor 55%, white);
+}
+
+.info {
+  --text-color: var(--blue-8);
+}
+
+.warning {
+  --text-color: var(--yellow-8);
+}
+
+.success {
+  --text-color: var(--green-8);
+}
+
+.error {
+  --text-color: var(--red-8);
+}

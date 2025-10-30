@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
-import { ColorBox } from '../../components/color-box/color-box';
 @Component({
   standalone: true,
   templateUrl: './state-theming.html',
-  imports: [ColorBox],
+  styleUrl: './state-theming.css',
 })
 export class StateThemingPage {}

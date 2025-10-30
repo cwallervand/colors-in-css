@@ -4,6 +4,7 @@ import { NgComponentOutlet } from '@angular/common';
 
 import { BasicColorPage } from '../../pages/basic-color/basic-color';
 import { BasicRelativeColorsPage } from '../../pages/basic-relative-colors/basic-relative-colors';
+import { StateThemingPage } from '../../pages/state-theming/state-theming';
 
 type PageComponent = BasicColorPage | BasicRelativeColorsPage;
 
@@ -22,6 +23,7 @@ export class PageOrchestrator implements OnInit {
   private pageMap: { [key: string]: Type<PageComponent> } = {
     '1': BasicColorPage,
     '2': BasicRelativeColorsPage,
+    '3': StateThemingPage,
   };
 
   ngOnInit(): void {
