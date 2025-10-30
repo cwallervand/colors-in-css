@@ -1,17 +1,21 @@
 import { Routes } from '@angular/router';
-
-// import { BasicColorPage } from '../pages/basic-color/basic-color';
-// import { BasicRelativeColorsPage } from '../pages/basic-relative-colors/basic-relative-colors';
 import { ResourcesPage } from '../pages/resources/resources';
 import { PageOrchestrator } from './page-orchestrator/page-orchestrator';
+import { AppLayout } from './layout/layout';
 
 export const routes: Routes = [
   {
-    path: 'resources',
-    component: ResourcesPage,
-  },
-  {
-    path: ':pageNumber',
-    component: PageOrchestrator,
+    path: '',
+    component: AppLayout,
+    children: [
+      {
+        path: 'resources',
+        component: ResourcesPage,
+      },
+      {
+        path: ':pageNumber',
+        component: PageOrchestrator,
+      },
+    ],
   },
 ];

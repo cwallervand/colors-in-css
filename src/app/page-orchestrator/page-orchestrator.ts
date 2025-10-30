@@ -4,16 +4,14 @@ import { NgComponentOutlet } from '@angular/common';
 
 import { BasicColorPage } from '../../pages/basic-color/basic-color';
 import { BasicRelativeColorsPage } from '../../pages/basic-relative-colors/basic-relative-colors';
-import { NavBar } from '../../components/nav-bar/nav-bar';
 
 type PageComponent = BasicColorPage | BasicRelativeColorsPage;
 
 @Component({
   selector: 'page-orchestrator',
   standalone: true,
-  imports: [NgComponentOutlet, NavBar],
+  imports: [NgComponentOutlet],
   templateUrl: './page-orchestrator.html',
-  styleUrl: './page-orchestrator.css',
 })
 export class PageOrchestrator implements OnInit {
   private activeRoute = inject(ActivatedRoute);
