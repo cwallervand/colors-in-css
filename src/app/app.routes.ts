@@ -5,16 +5,16 @@ import { AppLayout } from './layout/layout';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: ':pageNumber',
     component: AppLayout,
     children: [
       {
-        path: 'resources',
-        component: ResourcesPage,
+        path: '',
+        component: PageOrchestrator,
       },
       {
-        path: ':pageNumber',
-        component: PageOrchestrator,
+        path: 'resources',
+        component: ResourcesPage,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal, OnInit } from '@angular/core';
-import { Router, RouterLink, ActivatedRoute } from '@angular/router';
+import { Router, RouterLink, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'nav-bar',
@@ -13,10 +14,16 @@ export class NavBar implements OnInit {
   private activeRoute = inject(ActivatedRoute);
 
   currentPageNumber = signal<number>(1);
+  isBackRouteDisabled = signal<boolean>(false);
+  private isOnResourcesPage = signal<boolean>(false);
 
   backRoute = computed(() => {
     const currentPageNumber = this.currentPageNumber();
-    return currentPageNumber > 1 ? `/${currentPageNumber - 1}` : null;
+
+    if (this.isOnResourcesPage()) {
+      return `/${currentPageNumber}`;
+    }
+    return currentPageNumber > 1 ? `/${currentPageNumber - 1}` : `/${currentPageNumber}`;
   });
 
   forwardRoute = computed(() => {
@@ -24,20 +31,39 @@ export class NavBar implements OnInit {
     return `/${currentPageNumber + 1}`;
   });
 
-  constructor() {
-    console.log('### NavBar constructor ###');
-  }
-
   ngOnInit(): void {
-    this.activeRoute.paramMap.subscribe((params) => {
-      const pageNumber = params.get('pageNumber');
-      if (pageNumber) {
-        this.updateCurrentPage(parseInt(pageNumber, 10));
-      }
-    });
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.updateNavState(event.url);
+      });
+    this.updateNavState(this.router.url);
   }
 
   private updateCurrentPage(pageNumber: number): void {
     this.currentPageNumber.set(pageNumber);
+  }
+
+  private setIsOnResourcesPage(): void {
+    const currentUrl = this.router.url;
+    const isOnResourcesPage = currentUrl.includes('resources');
+    this.isOnResourcesPage.set(isOnResourcesPage);
+  }
+
+  private updateNavState(url: string): void {
+    this.setIsOnResourcesPage();
+    const pageMatch = url.match(/\/(\d+)/);
+    const pageNumber = pageMatch ? parseInt(pageMatch[1], 10) : null;
+
+    console.log('pageNumber', pageNumber);
+    if (pageNumber) {
+      this.updateCurrentPage(pageNumber);
+
+      if (pageNumber === 1 && !this.isOnResourcesPage()) {
+        this.isBackRouteDisabled.set(true);
+      } else {
+        this.isBackRouteDisabled.set(false);
+      }
+    }
   }
 }

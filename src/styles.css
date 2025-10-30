@@ -4,6 +4,7 @@
 @import 'open-props/sizes';
 @import 'open-props/shadows';
 @import 'open-props/fonts';
+@import 'open-props/colors';
 
 :root {
   --kantega-red: #ee3a64;
@@ -33,4 +34,9 @@
 }
 
 @layer base {
+  a {
+    color: var(--purple-7);
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
