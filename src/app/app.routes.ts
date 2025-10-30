@@ -7,16 +7,11 @@ import { PageOrchestrator } from './page-orchestrator/page-orchestrator';
 
 export const routes: Routes = [
   {
-    path: ':pageNumber',
-    component: PageOrchestrator,
-  },
-  {
     path: 'resources',
     component: ResourcesPage,
   },
   {
-    path: '',
-    redirectTo: '1',
-    pathMatch: 'full',
+    path: ':pageNumber',
+    component: PageOrchestrator,
   },
 ];
