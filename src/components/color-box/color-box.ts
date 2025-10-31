@@ -9,6 +9,7 @@ import { Component, input, HostBinding } from '@angular/core';
 })
 export class ColorBox {
   color = input.required<string>();
+  displayColorName = input<boolean>(true);
 
   @HostBinding('style.--color-box-color')
   get colorBoxColorValue() {
