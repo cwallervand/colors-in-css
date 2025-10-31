@@ -4,11 +4,11 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
-}
 
-.color-palette > div {
-  flex: 1;
-  min-width: 0;
+  & > div {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 .color-palette > div:nth-child(1) {
