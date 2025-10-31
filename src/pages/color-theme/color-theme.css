@@ -12,32 +12,29 @@
 }
 
 .color-palette > div:nth-child(1) {
-  background-color: var(--red-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 20%, white);
 }
 .color-palette > div:nth-child(2) {
-  background-color: var(--orange-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 40%, white);
 }
 .color-palette > div:nth-child(3) {
-  background-color: var(--yellow-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 60%, white);
 }
 .color-palette > div:nth-child(4) {
-  background-color: var(--lime-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 80%, white);
 }
 .color-palette > div:nth-child(5) {
-  background-color: var(--green-5);
+  background-color: var(--kantega-red);
 }
 .color-palette > div:nth-child(6) {
-  background-color: var(--cyan-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 80%, black);
 }
 .color-palette > div:nth-child(7) {
-  background-color: var(--blue-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 60%, black);
 }
 .color-palette > div:nth-child(8) {
-  background-color: var(--indigo-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 40%, black);
 }
 .color-palette > div:nth-child(9) {
-  background-color: var(--violet-5);
-}
-.color-palette > div:nth-child(10) {
-  background-color: var(--pink-5);
+  background-color: color-mix(in srgb, var(--kantega-red) 20%, black);
 }
