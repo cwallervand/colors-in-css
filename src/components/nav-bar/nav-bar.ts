@@ -11,7 +11,6 @@ import { filter } from 'rxjs/operators';
 })
 export class NavBar implements OnInit {
   private router = inject(Router);
-  private activeRoute = inject(ActivatedRoute);
 
   currentPageNumber = signal<number>(1);
   isBackRouteDisabled = signal<boolean>(false);
@@ -55,7 +54,6 @@ export class NavBar implements OnInit {
     const pageMatch = url.match(/\/(\d+)/);
     const pageNumber = pageMatch ? parseInt(pageMatch[1], 10) : null;
 
-    console.log('pageNumber', pageNumber);
     if (pageNumber) {
       this.updateCurrentPage(pageNumber);
 
