@@ -5,8 +5,9 @@ import { NgComponentOutlet } from '@angular/common';
 import { BasicColorPage } from '../../pages/basic-color/basic-color';
 import { BasicRelativeColorsPage } from '../../pages/basic-relative-colors/basic-relative-colors';
 import { StateThemingPage } from '../../pages/state-theming/state-theming';
+import { ColorThemePage } from '../../pages/color-theme/color-theme';
 
-type PageComponent = BasicColorPage | BasicRelativeColorsPage;
+type PageComponent = BasicColorPage | BasicRelativeColorsPage | StateThemingPage | ColorThemePage;
 
 @Component({
   selector: 'page-orchestrator',
@@ -24,6 +25,7 @@ export class PageOrchestrator implements OnInit {
     '1': BasicColorPage,
     '2': BasicRelativeColorsPage,
     '3': StateThemingPage,
+    '4': ColorThemePage,
   };
 
   ngOnInit(): void {
