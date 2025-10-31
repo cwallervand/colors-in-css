@@ -18,4 +18,9 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    redirectTo: '/1',
+    pathMatch: 'full',
+  },
 ];
