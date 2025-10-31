@@ -14,6 +14,14 @@ type PageComponent = BasicColorPage | BasicRelativeColorsPage | StateThemingPage
   standalone: true,
   imports: [NgComponentOutlet],
   templateUrl: './page-orchestrator.html',
+  styles: [
+    `
+      :host {
+        display: block;
+        height: 100%;
+      }
+    `,
+  ],
 })
 export class PageOrchestrator implements OnInit {
   private activeRoute = inject(ActivatedRoute);

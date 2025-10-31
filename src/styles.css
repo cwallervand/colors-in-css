@@ -37,76 +37,7 @@
 @layer base {
   html,
   body {
-    height: 100%; /* ensure the body takes full height */
-    /*margin: 0; /* remove default margins */*/
-  }
-
-  body {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    /*height: 100vh;*/
-    /*margin: 0;
-    position: relative;*/
-  }
-
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: var(--shadow-2);
-    height: var(--size-9);
-  }
-
-  main {
     height: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .color-palette {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-  }
-
-  .color-palette > div {
-    flex: 1;
-    min-width: 0;
-  }
-
-  /* Example colors for the color bands */
-  .color-palette > div:nth-child(1) {
-    background-color: var(--red-5);
-  }
-  .color-palette > div:nth-child(2) {
-    background-color: var(--orange-5);
-  }
-  .color-palette > div:nth-child(3) {
-    background-color: var(--yellow-5);
-  }
-  .color-palette > div:nth-child(4) {
-    background-color: var(--lime-5);
-  }
-  .color-palette > div:nth-child(5) {
-    background-color: var(--green-5);
-  }
-  .color-palette > div:nth-child(6) {
-    background-color: var(--cyan-5);
-  }
-  .color-palette > div:nth-child(7) {
-    background-color: var(--blue-5);
-  }
-  .color-palette > div:nth-child(8) {
-    background-color: var(--indigo-5);
-  }
-  .color-palette > div:nth-child(9) {
-    background-color: var(--violet-5);
-  }
-  .color-palette > div:nth-child(10) {
-    background-color: var(--pink-5);
   }
 
   a {
